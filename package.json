@@ -1,0 +1,22 @@
+{
+  "name": "burger-the-burger",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tsully1990/Burger-the-Burger.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tsully1990/Burger-the-Burger/issues"
+  },
+  "homepage": "https://github.com/tsully1990/Burger-the-Burger#readme"
+}
