@@ -1,6 +1,6 @@
-INSERT INTO burgers (name) VALUES ("hamburger");
-INSERT INTO burgers (name) VALUES ("cheese burger");
-INSERT INTO burgers (name) VALUES ("lettuce wrapped burger (for the hippies)");
-INSERT INTO burgers (name) VALUES ("veggie burger (for the super-hippies");
-INSERT INTO burgers (name) VALUES ("hotdog burger");
-INSERT INTO burgers (name) VALUES ("breakfast burger");
+INSERT INTO burgers (burger_name) VALUES ("hamburger");
+INSERT INTO burgers (burger_name) VALUES ("cheese burger");
+INSERT INTO burgers (burger_name, devoured) VALUES ("lettuce wrapped burger (for the hippies)", true);
+INSERT INTO burgers (burger_name, devoured) VALUES ("veggie burger (for the super-hippies", true);
+INSERT INTO burgers (burger_name) VALUES ("hotdog burger");
+INSERT INTO burgers (burger_name) VALUES ("breakfast burger");

@@ -1,45 +1,62 @@
-<h1>BOIGAHS!</h1>
+<div class = "container bg">
 
-<container>
-  <nav>
-      <div id="burgerPhoto"
-          href="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.foodnetwork.com%2Frecipes%2Ffood-network-kitchen%2Fsmashburger-style-burgers-3721349&psig=AOvVaw0_oqO2uMxLOIOWs2BKz8Tk&ust=1585200143504000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCJiT0_DwtOgCFQAAAAAdAAAAABAD";>
-      </div>
-  </nav>
-</container>
-
-<h2>Burgers that are nice and juicy!</h2>
-
-<ul>
-  {{#each burger}}
-  {{#unless sleepy}}
-  {{> cats/cat-block sleep=true}}
-  {{/unless}}
-  {{/each}}
-</ul>
-
-<h2>Burgers that have been nom'd!</h2>
-
-<ul>
-  {{#each burger}}
-  {{#if sleepy}}
-  {{> cats/cat-block sleep=false}}
-  {{/if}}
-  {{/each}}
-</ul>
-
-<h2>Add a burger</h2>
-<form class="create-form">
-
-  <div class="form-group">
-    <label for="ca">Burger Name:</label>
-    <input type="text" id="burg" name="name">
+  <div class = "row">
+    <div class = "center col-sm-12">
+      <h1>Nom on da Boigah App</h1>
+      <p></p>
+    </div>
   </div>
 
-  <div class="form-group">
-    <label for="devoured">Devour?</label><br>
-    <input type="radio" name="sleepy" value="1" checked> Devoured!<br>
-    <input type="radio" name="sleepy" value="0"> Devour!  </div>
+<div class = "row">
 
-  <button type="submit">Add Burger</button>
-</form>
+  <div class="col-sm-6">
+
+    <h2>Available Burgers</h2>
+
+    <ul>
+      {{#each burgers}}
+      {{#unless this.devoured}}
+
+      <li>
+        <span class="burgerName"><strong>{{this.id}} - {{this.burger.name}}</strong></span>
+        <form class="form-inline" id="formID" action="{{this.id}}" method="POST">
+          <input type="hidden" name="devoured" value="true">
+          <button class="devourburger btn" type="submit">Nom It</button>
+        </form>
+      </li>
+        {{/unless}}
+        {{/each}}
+
+    </ul>
+  </div>
+</div>
+<div class="col-sm-6">
+			<h2>Nom'd Burgers</h2>
+			{{#each burgers}}
+			{{#if devoured}}
+
+			<li>
+				<span class="burgerName"><strong>{{this.id}} - {{this.burger_name}} </strong></span>
+				<button type="button" class="trashburger btn" id="trashbutton" data-id="{{this.id}}" data-newDevoured="{{devour}}"><span
+					 class="trash"></span>Toss it up breh</button>
+			</li>
+
+			{{/if}}
+			{{/each}}
+
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="center col-sm-12">
+			<form class="create-update-form" action="/" method="POST">
+				<div class="form-group">
+					<p class="instructions">Enter a burger you want to order and click the Submit Order button.</p>
+					<input type="search" id="ca" name="burger_name" placeholder="Your order...">
+				</div>
+				<button class="submitburger btn" type="submit">Submit Order</button>
+			</form>
+		</div>
+	</div>
+
+</div>
